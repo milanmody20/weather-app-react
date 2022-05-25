@@ -10,6 +10,9 @@ class CurrentWeather extends React.Component {
                 <div className= "current_weather_description">
                     <p>Sunny</p>
                 </div>
+                <div className= "current_weather_image" url="">
+    
+                </div>
                 <div className= "current_weather_feels_like">
                     <p>65 degrees</p>
                 </div>

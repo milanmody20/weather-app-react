@@ -8,29 +8,29 @@ class SearchBar extends React.Component {
             location: "",
             temp: "",
         };
-
+    
         // getCurrentWeather('Atlanta').then((response) => {
         //     console.log('res: ', response);
         // })
     };
-
+    
     onInputChange(e) {
         this.setState({
             location: e.target.value
         })
         // console.log(e.target.value);
     }
-
+    
     onFormSubmit(e){
         e.preventDefault();
-
+    
         getCurrentWeather(this.state.location).then((response) => {
             // console.log('farenheit temp: ', response.data.main.temp);
             this.setState({
                 temp: response.data.main.temp
             });
         })
-    }
+    }    
 
     render(){
         const location = this.state.location;
