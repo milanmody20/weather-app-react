@@ -25,7 +25,10 @@ class SearchBar extends React.Component {
         e.preventDefault();
 
         getCurrentWeather(this.state.location).then((response) => {
-            console.log('farenheit temp: ', response.data.main.temp);
+            // console.log('farenheit temp: ', response.data.main.temp);
+            this.setState({
+                temp: response.data.main.temp
+            });
         })
     }
 
@@ -35,15 +38,15 @@ class SearchBar extends React.Component {
 
         return(
             <div>
+                <form onSubmit={(e) => this.onFormSubmit(e)}>
+                    <button type = "submit">Search</button>
+                    <input id="search" name="search" value={location} onChange={(e) => this.onInputChange(e)}></input>
+                </form>
                 <div>
                     <p>
                         {temp}
                     </p>
                 </div>
-                <form onSubmit={(e) => this.onFormSubmit(e)}>
-                    <button type = "submit">Search</button>
-                    <input id="search" name="search" value={location} onChange={(e) => this.onInputChange(e)}></input>
-                </form>
             </div>
         )
     }
