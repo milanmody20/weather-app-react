@@ -32,7 +32,10 @@ onFormSubmit(){
     getCurrentWeather(this.state.location).then((response) => {
         // console.log('farenheit temp: ', response.data.main.temp);
         this.setState({
-            temp: response.data.main.temp
+            temp: response.data.main.temp,
+            feelsLike: response.data.main.feels_like,
+            description: response.data.weather[0].main,
+            icon: response.data.weather[0].icon,
         });
     });
 }
