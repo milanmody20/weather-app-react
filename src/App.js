@@ -21,26 +21,27 @@ class App extends React.Component() {
 onInputChange(e) {
     this.setState({
         location: e.target.value
-    })
+    });
     // console.log(e.target.value);
 }
 
-onFormSubmit(e){
-    e.preventDefault();
+onFormSubmit(){
 
     getCurrentWeather(this.state.location).then((response) => {
         // console.log('farenheit temp: ', response.data.main.temp);
         this.setState({
             temp: response.data.main.temp
         });
-    })
+    });
 }
 
   render(){
     return (
       <div className="App">
-      
-          <SearchBar />
+          <SearchBar 
+            location={this.state.location}
+            inputChange={(e) => this.onInputChange(e)}
+            formSubmitted={() => this.onFormSubmit()} />
           <CurrentWeather />
       </div>
     );
