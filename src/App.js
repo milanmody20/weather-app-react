@@ -11,6 +11,9 @@ class App extends React.Component() {
     this.state = {
         location: "",
         temp: "",
+        feelsLike: "",
+        description: "",
+        icon: "",
     };
 
     // getCurrentWeather('Atlanta').then((response) => {
@@ -26,7 +29,6 @@ onInputChange(e) {
 }
 
 onFormSubmit(){
-
     getCurrentWeather(this.state.location).then((response) => {
         // console.log('farenheit temp: ', response.data.main.temp);
         this.setState({
@@ -41,8 +43,14 @@ onFormSubmit(){
           <SearchBar 
             location={this.state.location}
             inputChange={(e) => this.onInputChange(e)}
-            formSubmitted={() => this.onFormSubmit()} />
-          <CurrentWeather />
+            formSubmitted={() => this.onFormSubmit()} 
+          />
+          <CurrentWeather 
+            currentTemperature={this.state.temp}
+            feelsLike={this.state.feelsLike}
+            description={this.state.description}
+            icon={this.state.icon}  
+          />
       </div>
     );
   }

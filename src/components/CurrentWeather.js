@@ -5,7 +5,7 @@ class CurrentWeather extends React.Component {
         return (
             <div className= "current_weather">
                 <div className= "current_weather_temp">
-                    <p>70 degrees </p>
+                    <p>{this.props.currentTemperature} </p>
                 </div>
                 <div className= "current_weather_description">
                     <p>Sunny</p>
