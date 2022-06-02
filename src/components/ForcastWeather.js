@@ -3,9 +3,11 @@ import React from 'react';
 class ForcastWeather extends React.Component {
     render() {
         return(
-            <div>
-
+            <div className="forcast">
+                My Forcast
             </div>
         );
     }
 }
+
+export default ForcastWeather;

@@ -12,12 +12,12 @@ class SearchBar extends React.Component {
     
     onFormSubmit(e){
         e.preventDefault();
-        this.props.forSubmitted();
+        this.props.formSubmitted();
     }
 
     render(){
-        const location = this.state.location;
-        const temp = this.state.temp;
+        const location = this.props.location;
+        const temp = this.props.temp;
 
         return(
             <div>

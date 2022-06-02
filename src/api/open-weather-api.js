@@ -6,6 +6,13 @@ function getCurrentWeather(Location) {
     ); 
 }
 
+function getForcast(Lat, Lon){
+    return axios.get(
+        `https://api.openweathermap.org/data/2.5/oncall?lat=${Lat}&long=${Lon}&appid=${process.env.REACT_APP_API_KEY}`
+    )
+}
+
 export {
-    getCurrentWeather
+    getCurrentWeather,
+    getForcast
 }
